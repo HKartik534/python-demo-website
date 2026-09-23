@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Watches | ChronoLux</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static',
+          filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <div class="logo">
+        Chrono<span>Lux</span>
+    </div>
+
+    <div class="nav-links">
+
+        <a href="{{ url_for('home') }}">Home</a>
+
+        <a href="{{ url_for('products') }}">Watches</a>
+
+        <a href="{{ url_for('contact') }}">Contact</a>
+
+        <a href="{{ url_for('cart') }}">🛒 Cart</a>
+
+    </div>
+
+</nav>
+
+
+<section class="products-page">
+
+    <div class="section-heading">
+
+        <p>COLLECTION</p>
+
+        <h1>Our Watches</h1>
+
+    </div>
+
+
+    <form class="search-box"
+          action="{{ url_for('products') }}"
+          method="GET">
+
+        <input
+            type="text"
+            name="search"
+            placeholder="Search watches..."
+        >
+
+        <button type="submit">
+            Search
+        </button>
+
+    </form>
+
+
+    <div class="watch-grid">
+
+        {% for watch in watches %}
+
+        <div class="watch-card">
+
+            <div class="watch-image">
+
+                <img
+                    src="{{ url_for('static',
+                    filename='images/' + watch.image) }}"
+                    alt="{{ watch.name }}"
+                >
+
+            </div>
+
+            <div class="watch-info">
+
+                <small>{{ watch.category }}</small>
+
+                <h3>{{ watch.name }}</h3>
+
+                <p>
+                    {{ watch.description }}
+                </p>
+
+                <h4 class="price">
+                    ₹{{ watch.price }}
+                </h4>
+
+                <div class="product-actions">
+
+                    <a
+                        href="{{ url_for('product',
+                        product_id=watch.id) }}"
+                        class="view-btn">
+
+                        Details
+
+                    </a>
+
+                    <a
+                        href="{{ url_for('add_to_cart',
+                        product_id=watch.id) }}"
+                        class="cart-btn">
+
+                        Add to Cart
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        {% else %}
+
+        <h2>No watches found.</h2>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Your Cart | ChronoLux</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static',
+          filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <div class="logo">
+        Chrono<span>Lux</span>
+    </div>
+
+    <div class="nav-links">
+
+        <a href="{{ url_for('home') }}">Home</a>
+
+        <a href="{{ url_for('products') }}">Watches</a>
+
+    </div>
+
+</nav>
+
+
+<section class="cart-page">
+
+    <div class="section-heading">
+
+        <p>YOUR SHOPPING BAG</p>
+
+        <h1>Shopping Cart</h1>
+
+    </div>
+
+
+    {% if cart_items %}
+
+        {% for watch in cart_items %}
+
+        <div class="cart-item">
+
+            <img
+                src="{{ url_for('static',
+                filename='images/' + watch.image) }}"
+                alt="{{ watch.name }}"
+            >
+
+            <div>
+
+                <h3>
+                    {{ watch.name }}
+                </h3>
+
+                <p>
+                    ₹{{ watch.price }}
+                </p>
+
+            </div>
+
+            <a
+                href="{{ url_for('remove_from_cart',
+                product_id=watch.id) }}"
+                class="remove-btn">
+
+                Remove
+
+            </a>
+
+        </div>
+
+        {% endfor %}
+
+
+        <div class="cart-total">
+
+            <h2>
+                Total: ₹{{ total }}
+            </h2>
+
+            <button class="btn"
+                    onclick="checkout()">
+
+                Checkout
+
+            </button>
+
+        </div>
+
+    {% else %}
+
+        <div class="empty-cart">
+
+            <h2>Your cart is empty.</h2>
+
+            <a
+                href="{{ url_for('products') }}"
+                class="btn">
+
+                Browse Watches
+
+            </a>
+
+        </div>
+
+    {% endif %}
+
+</section>
+
+
+<script>
+
+function checkout() {
+
+    alert(
+        "Checkout functionality can be connected to a payment gateway later."
+    );
+
+}
+
+</script>
+
+</body>
+</html>

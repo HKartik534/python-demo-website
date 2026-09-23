@@ -1,0 +1,565 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #0b0b0b;
+    color: #ffffff;
+}
+
+
+/* NAVBAR */
+
+.navbar {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8%;
+    border-bottom: 1px solid #222;
+    background: #0b0b0b;
+}
+
+.logo {
+    font-size: 27px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: #d4af37;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: #ddd;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #d4af37;
+}
+
+
+/* HERO */
+
+.hero {
+    min-height: 650px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 70px 10%;
+    background:
+        radial-gradient(
+            circle at 75% 50%,
+            #262016,
+            #0b0b0b 45%
+        );
+}
+
+.hero-content {
+    max-width: 550px;
+}
+
+.small-title {
+    color: #d4af37;
+    letter-spacing: 5px;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: 75px;
+    line-height: 1;
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: #d4af37;
+}
+
+.hero-content > p:not(.small-title) {
+    color: #aaa;
+    font-size: 17px;
+    line-height: 1.7;
+    margin-bottom: 35px;
+}
+
+
+/* BUTTON */
+
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background: #d4af37;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #ffffff;
+    transform: translateY(-3px);
+}
+
+
+/* HERO WATCH */
+
+.hero-watch {
+    width: 420px;
+    height: 420px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.watch-circle {
+    width: 340px;
+    height: 340px;
+    border-radius: 50%;
+    background: #222;
+    border: 20px solid #333;
+    box-shadow:
+        0 0 50px rgba(212, 175, 55, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.watch-face {
+    width: 270px;
+    height: 270px;
+    border-radius: 50%;
+    background: #111;
+    border: 5px solid #d4af37;
+    position: relative;
+}
+
+.number {
+    position: absolute;
+    color: #d4af37;
+    font-weight: bold;
+}
+
+.n12 {
+    top: 12px;
+    left: 50%;
+}
+
+.n3 {
+    right: 15px;
+    top: 50%;
+}
+
+.n6 {
+    bottom: 12px;
+    left: 50%;
+}
+
+.n9 {
+    left: 15px;
+    top: 50%;
+}
+
+.hand {
+    position: absolute;
+    width: 4px;
+    background: white;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: bottom;
+    border-radius: 10px;
+}
+
+.hour {
+    height: 65px;
+    transform: rotate(40deg);
+}
+
+.minute {
+    height: 90px;
+    transform: rotate(130deg);
+}
+
+.center-dot {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: #d4af37;
+    border-radius: 50%;
+    left: calc(50% - 6px);
+    top: calc(50% - 6px);
+}
+
+
+/* SECTION */
+
+.featured,
+.products-page,
+.cart-page,
+.contact-page {
+    padding: 100px 8%;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-heading p {
+    color: #d4af37;
+    letter-spacing: 4px;
+    font-size: 12px;
+    margin-bottom: 12px;
+}
+
+.section-heading h1,
+.section-heading h2 {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+.section-heading span {
+    color: #888;
+}
+
+
+/* WATCH GRID */
+
+.watch-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(4, 1fr);
+    gap: 25px;
+}
+
+.watch-card {
+    background: #151515;
+    border: 1px solid #252525;
+    transition: 0.4s;
+    overflow: hidden;
+}
+
+.watch-card:hover {
+    transform: translateY(-10px);
+    border-color: #d4af37;
+}
+
+.watch-image {
+    height: 280px;
+    background: #1c1c1c;
+    overflow: hidden;
+}
+
+.watch-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.watch-card:hover img {
+    transform: scale(1.08);
+}
+
+.watch-info {
+    padding: 22px;
+}
+
+.watch-info small {
+    color: #d4af37;
+}
+
+.watch-info h3 {
+    margin: 10px 0;
+    font-size: 20px;
+}
+
+.watch-info p {
+    color: #888;
+    line-height: 1.5;
+}
+
+.price {
+    color: #fff !important;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+.view-btn,
+.cart-btn {
+    display: inline-block;
+    padding: 10px 15px;
+    text-decoration: none;
+    margin-top: 8px;
+}
+
+.view-btn {
+    color: #d4af37;
+    border: 1px solid #d4af37;
+}
+
+.cart-btn {
+    background: #d4af37;
+    color: #000;
+    margin-left: 5px;
+}
+
+
+/* WHY US */
+
+.why-us {
+    display: grid;
+    grid-template-columns:
+        repeat(3, 1fr);
+    gap: 40px;
+    padding: 80px 10%;
+    background: #121212;
+}
+
+.why-us div {
+    padding: 20px;
+}
+
+.why-us span {
+    color: #d4af37;
+}
+
+.why-us h3 {
+    margin: 15px 0;
+}
+
+.why-us p {
+    color: #888;
+    line-height: 1.6;
+}
+
+
+/* SEARCH */
+
+.search-box {
+    display: flex;
+    max-width: 600px;
+    margin: 0 auto 50px;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 15px;
+    background: #181818;
+    color: white;
+    border: 1px solid #333;
+}
+
+.search-box button {
+    padding: 15px 25px;
+    background: #d4af37;
+    border: none;
+    cursor: pointer;
+}
+
+
+/* PRODUCT DETAIL */
+
+.product-detail {
+    min-height: 650px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    padding: 80px 10%;
+}
+
+.detail-image {
+    height: 500px;
+}
+
+.detail-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.detail-info small {
+    color: #d4af37;
+}
+
+.detail-info h1 {
+    font-size: 55px;
+    margin: 15px 0;
+}
+
+.detail-info h2 {
+    color: #d4af37;
+    margin-bottom: 25px;
+}
+
+.detail-info p {
+    color: #999;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+
+/* CART */
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    background: #151515;
+    padding: 20px;
+    margin-bottom: 15px;
+}
+
+.cart-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.cart-item div {
+    flex: 1;
+}
+
+.remove-btn {
+    color: #ff5555;
+    text-decoration: none;
+}
+
+.cart-total {
+    text-align: right;
+    margin-top: 40px;
+}
+
+.empty-cart {
+    text-align: center;
+    padding: 60px;
+}
+
+
+/* CONTACT */
+
+.contact-form {
+    max-width: 700px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 17px;
+    background: #151515;
+    color: white;
+    border: 1px solid #333;
+    outline: none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #d4af37;
+}
+
+.success {
+    max-width: 700px;
+    margin: 0 auto 30px;
+    padding: 15px;
+    background: #153b24;
+    color: #70e09b;
+}
+
+
+/* FOOTER */
+
+footer {
+    padding: 50px 8%;
+    border-top: 1px solid #222;
+    text-align: center;
+}
+
+footer p {
+    color: #777;
+    margin-top: 15px;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 1000px) {
+
+    .watch-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        gap: 60px;
+    }
+
+    .hero h1 {
+        font-size: 55px;
+    }
+
+    .product-detail {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .navbar {
+        padding: 0 5%;
+    }
+
+    .nav-links {
+        gap: 10px;
+        font-size: 13px;
+    }
+
+    .watch-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .why-us {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-watch {
+        width: 300px;
+        height: 300px;
+    }
+
+    .watch-circle {
+        width: 250px;
+        height: 250px;
+    }
+
+    .watch-face {
+        width: 195px;
+        height: 195px;
+    }
+
+    .hero h1 {
+        font-size: 45px;
+    }
+
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>{{ watch.name }} | ChronoLux</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static',
+          filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <div class="logo">
+        Chrono<span>Lux</span>
+    </div>
+
+    <div class="nav-links">
+
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('products') }}">Watches</a>
+        <a href="{{ url_for('cart') }}">🛒 Cart</a>
+
+    </div>
+
+</nav>
+
+
+<section class="product-detail">
+
+    <div class="detail-image">
+
+        <img
+            src="{{ url_for('static',
+            filename='images/' + watch.image) }}"
+            alt="{{ watch.name }}"
+        >
+
+    </div>
+
+
+    <div class="detail-info">
+
+        <small>{{ watch.category }}</small>
+
+        <h1>{{ watch.name }}</h1>
+
+        <h2>
+            ₹{{ watch.price }}
+        </h2>
+
+        <p>
+            {{ watch.description }}
+        </p>
+
+        <p>
+            This beautifully crafted timepiece combines
+            modern aesthetics with reliable performance.
+            Perfect for both casual and formal occasions.
+        </p>
+
+        <a
+            href="{{ url_for('add_to_cart',
+            product_id=watch.id) }}"
+            class="btn">
+
+            Add To Cart
+
+        </a>
+
+    </div>
+
+</section>
+
+
+</body>
+</html>
